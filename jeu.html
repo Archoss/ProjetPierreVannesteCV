@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+    <div class="ready">
+        <div class="fond">
+            <div>
+                <a href="siteCv.html" class="cv">CV</a>
+            </div>
+            <audio controls="controls" style="position: absolute; z-index: 2;">
+                <source style="color:red;" src="sounds/E1M1 - At Doom's Gate.mp3" type="audio/mp3" /> Votre navigateur n'est pas compatible
+            </audio>
+            <img class="gameOver" id="gameOver" src="http://i0.wp.com/www.couches-land.fr/blog/wp-content/uploads/2014/12/249-artwork-focus.jpg"
+                alt="game over" style="position: absolute; z-index: 3;">
+            <img class="porte" id="porte" src="spritesRetro/grey_industrial_door_by_hoover1979-daeb1iv.png" alt="Porte Start">
+            <div id="terrain" class="terrain">
+                <div class="impBoite" id="impBoite">
+                    <div id="impMasque" class="impMasque">
+                        <img id="impSprite" style="position:absolute;" src="spritesRetro/imp.gif" alt="doomImp" title="doomImp">
+                    </div>
+                </div>
+                <div id="heroBoite" class="heroBoite">
+                    <div id="heroMasque" class="heroMasque">
+                        <img id="heroSprite" style="position:absolute;" src="spritesRetro/hexen.png" alt="Hero" title="hexenHero">
+                    </div>
+                </div>
+                <div id="ettinBoite" class="ettinBoite">
+                    <div id="ettinMasque" class="ettinMasque">
+                        <img id="ettinSprite" style="position:absolute;" src="spritesRetro/30631.png" alt="Ettin" title="Ettin">
+                    </div>
+                </div>
+                <div id="heresiarchBoite" class="heresiarchBoite">
+                    <div id="heresiarchMasque" class="heresiarchMasque">
+                        <img id="heresiarchSprite" style="position:absolute;" src="spritesRetro/Heresiarch.png" alt="Heresiarch" title="Heresiarch">
+                    </div>
+                </div>
+                <div id="gargoyleBoite" class="gargoyleBoite">
+                    <div id="gargoyleMasque" class="gargoyleMasque">
+                        <img id="gargoyleSprite" style="position:absolute;" src="spritesRetro/Gargoyle.png" alt="gargoyle" title="gargoyle">
+                    </div>
+                </div>
+            </div>
+            <!-- ARME DU JOUEUR -->
+            <div id="armeTerrain" class="armeTerrain">
+                <div id="armeBoite" class="armeBoite">
+                    <div id="armeMasque" class="armeMasque">
+                        <img id="armeSprite" style="position: absolute; top: -93px" src="spritesRetro/chainGun.png" alt="Arme" title="Arme">
+                    </div>
+                </div>
+            </div>
+            <!-- HUD AVEC LE PERSONNAGE ET LES LANGAGES QUI VONT APPARAITRE -->
+            <div class="marineBoite">
+                <div id="marineMasque" class="marineMasque" style="position: relative;overflow:hidden;left: 45.9%;top:6%; width: 390px;">
+                    <img id="marineSprite" style="position:absolute;" src="spritesRetro/Marine HUD.png" alt="Marine" title="Marine">
+                </div>
+            </div>
+            <div id="torcheBoite" class="torcheBoite">
+                <div id="torcheMasque" class="torcheMasque">
+                    <img id="torcheSprite" style="position:absolute;" src="spritesRetro/torche.png" alt="Torche" title="Torche">
+                </div>
+            </div>
+            <div id="torche2Boite" class="torcheBoite">
+                <div id="torche2Masque" class="torche2Masque">
+                    <img id="torche2Sprite" style="position:absolute;" src="spritesRetro/torche.png" alt="Torche" title="Torche">
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Skills</h1>
+    <img id="competences angular" class="angular" src="img/logos/AngularJS-Shield-large.png" title="Angular" alt="Angular">
+    <img id="competences ajax" class="ajax" src="img/logos/formation-ajax-developpez-pour-le-web-20-3-jours.jpg" title="Ajax"
+        alt="Ajax">
+    <img id="competences htmlCss" class="htmlCss" src="img/logos/html-css-js.png" title="Html/Css" alt="Html/Css">
+    <img id="competences jquery" class="jquery" src="img/logos/jQurery-e1423237413165.gif" title="Jquery" alt="Jquery">
+    <img id="competences meteor" class="meteor" src="img/logos/meteor-1.png" title="Meteor" alt="Meteor">
+    <img id="competences mongodb" class="mongodb" src="img/logos/mongodb-1.png" title="Mongodb" alt="Mongodb">
+    <img id="competences node" class="node" src="img/logos/nodejs-logo.png" title="Node" alt="Node">
+</body>
+
+</html>

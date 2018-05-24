@@ -1,0 +1,51 @@
+*,html{
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
+body{
+    /* width: 600px; */
+}
+
+#page{
+    background-image: url("http://monodomo.com/free-wallpapers/retro-gaming-wallpapers-1080p-For-Free-Wallpaper-1.jpg");
+    background-size: contain;
+}
+
+h1{
+    color: white;
+    margin: 1% auto;
+    background-color: #58585887;
+    padding: 1%;
+    width: 300px;
+    border-radius: 5px;
+    
+}
+h1:hover{
+    background-color: #7b7b7b87;
+    transition: 0.25s all;
+}
+h1:active{
+    color: rgb(0, 0, 0);
+    background-color: #00000087;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    text-align: center;
+    padding: 15px;
+    /* background-color: #000000; */
+    /* border: solid 3px #ff4646; */
+    height: auto;
+    width: 50%;
+    margin: auto;
+    /* box-shadow: 7px 7px 20px 0px #363636; */
+}
+
+iframe{
+    width: 740px;
+    border: none;
+}

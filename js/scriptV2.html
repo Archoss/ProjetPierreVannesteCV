@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            // ##############################################################################
+            // #############            --- OBJETS CONSTRUCTEURS         ---  ###############
+            // ##############################################################################
+            function ennemy(name, height) {
+                this.id,
+                    this.
+            }
+
+
+            var gargoyle = {
+                walkingDown: [{
+                    largeurMasque: "48px",
+                    hauteurMasque: "38px",
+                    topMasque: "-16px",
+                    leftMasque: "-9px"
+                }, {
+                    largeurMasque: "54px",
+                    hauteurMasque: "35px",
+                    topMasque: "-17px",
+                    leftMasque: "-79px"
+                }, {
+                    largeurMasque: "56px",
+                    hauteurMasque: "46px",
+                    topMasque: "-12px",
+                    leftMasque: "-156px"
+                }],
+                attack: [{
+                    largeurMasque: "37px",
+                    hauteurMasque: "52px",
+                    topMasque: "-11px",
+                    leftMasque: "-316px"
+                }, {
+                    largeurMasque: "50px",
+                    hauteurMasque: "47px",
+                    topMasque: "-13px",
+                    leftMasque: "-376px"
+                }, {
+                    largeurMasque: "58px",
+                    hauteurMasque: "35px",
+                    topMasque: "-19px",
+                    leftMasque: "-449px"
+                }],
+                death: [{
+                    largeurMasque: "56px",
+                    hauteurMasque: "49px",
+                    topMasque: "-773px",
+                    leftMasque: "-8px"
+                }, {
+                    largeurMasque: "68px",
+                    hauteurMasque: "54px",
+                    topMasque: "-768px",
+                    leftMasque: "-88px"
+                }, {
+                    largeurMasque: "76px",
+                    hauteurMasque: "67px",
+                    topMasque: "-756px",
+                    leftMasque: "-176px"
+                }, {
+                    largeurMasque: "78px",
+                    hauteurMasque: "62px",
+                    topMasque: "-760px",
+                    leftMasque: "-278px"
+                }, {
+                    largeurMasque: "61px",
+                    hauteurMasque: "53px",
+                    topMasque: "-770px",
+                    leftMasque: "-379px"
+                }, {
+                    largeurMasque: "64px",
+                    hauteurMasque: "45px",
+                    topMasque: "-778px",
+                    leftMasque: "-464px"
+                }, {
+                    largeurMasque: "63px",
+                    hauteurMasque: "28px",
+                    topMasque: "-795px",
+                    leftMasque: "-551px"
+                }, {
+                    largeurMasque: "63px",
+                    hauteurMasque: "14px",
+                    topMasque: "-809px",
+                    leftMasque: "-638px"
+                }]
+            }
+        }   
+    </script>
+</head>
+
+<body>
+    <div class="ready">
+        <img class="porte" id="porte" src="spritesRetro/grey_industrial_door_by_hoover1979-daeb1iv.png" alt="Porte Start">
+        <div class="terrain" id="terrain">
+            <div class="gargoyleBoite" id="gargoyleBoite">
+                <div id="gargoyleMasque" class="gargoyleMasque" style="position:relative; overflow:hidden; width:66px; height:67px;">
+                    <img id="gargoyleSprite" style="position:absolute;" src="spritesRetro/Gargoyle.png" alt="gargoyle" title="gargoyle">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
