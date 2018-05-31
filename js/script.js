@@ -668,98 +668,6 @@ window.onload = function () {
         }]
     }
     // ------------------------------------------------------------------------------
-    var lostSoul = {
-        walkingDown: [{
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "0px",
-            leftMasque: "0px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-11px",
-            leftMasque: "-413px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-96px",
-            leftMasque: "-56px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-103px",
-            leftMasque: "-568px"
-        }],
-        walkingUp: [{
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "0px",
-            leftMasque: "-84px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-11px",
-            leftMasque: "-499px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-104px",
-            leftMasque: "-141px"
-        }, {
-            largeurMasque: "72px",
-            hauteurMasque: "75px",
-            topMasque: "-104px",
-            leftMasque: "-654px"
-        }],
-        walkingSide: [{
-            largeurMasque: "55px",
-            hauteurMasque: "87px",
-            topMasque: "0px",
-            leftMasque: "-253px"
-        }, {
-            largeurMasque: "55px",
-            hauteurMasque: "87px",
-            topMasque: "0px",
-            leftMasque: "-681px"
-        }, {
-            largeurMasque: "110px",
-            hauteurMasque: "81px",
-            topMasque: "-97px",
-            leftMasque: "-340px"
-        }, {
-            largeurMasque: "110px",
-            hauteurMasque: "81px",
-            topMasque: "-183px",
-            leftMasque: "-92px"
-        }],
-        death: [{
-            largeurMasque: "59px",
-            hauteurMasque: "91px",
-            topMasque: "-279px",
-            leftMasque: "0px"
-        }, {
-            largeurMasque: "73px",
-            hauteurMasque: "91px",
-            topMasque: "-279px",
-            leftMasque: "-86px"
-        }, {
-            largeurMasque: "113px",
-            hauteurMasque: "99px",
-            topMasque: "-271px",
-            leftMasque: "-169px"
-        }, {
-            largeurMasque: "142px",
-            hauteurMasque: "118px",
-            topMasque: "-281px",
-            leftMasque: "-287px"
-        }, {
-            largeurMasque: "165px",
-            hauteurMasque: "145px",
-            topMasque: "-281px",
-            leftMasque: "-455px"
-        }]
-    }
-    // ------------------------------------------------------------------------------
     var ettin = {
         walkingDown: [{
             largeurMasque: "98px",
@@ -1073,7 +981,6 @@ window.onload = function () {
                     if ((objet == gargoyle.death) ||
                         (objet == imp.death) ||
                         (objet == hero.death) ||
-                        (objet == lostSoul.death) ||
                         (objet == heresiarch.death) ||
                         (objet == ettin.death)) {
 
@@ -1112,7 +1019,6 @@ window.onload = function () {
                 if ((objet == gargoyle.death) ||
                     (objet == imp.death) ||
                     (objet == hero.death) ||
-                    (objet == lostSoul.death) ||
                     (objet == heresiarch.death) ||
                     (objet == ettin.death)) {
                     clearInterval(collisionAnimationID);
@@ -1318,7 +1224,7 @@ window.onload = function () {
         // console.log(" armeBoite left " + parseFloat(armeBoite.style.left) + " heroBoite left " + parseFloat(heroBoite.style.left));
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heroBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(heroBoite.style.left) + parseFloat(heroBoite.style.width)) && weapon.fire)) {
-            console.log("---- PAAAAAAAAFFF collisions de tirs ---- ");
+            // console.log("---- PAAAAAAAAFFF collisions de tirs ---- ");
             heroBoite.style.top = "0px";
             // heroBoite.style.backgroundColor = "red";
             heroBoite.style.filter = "grayscale(100%)";
@@ -1336,7 +1242,7 @@ window.onload = function () {
         // /--------------------------------------------------------------------------------/
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(ettinBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(ettinBoite.style.left) + parseFloat(ettinBoite.style.width)) && weapon.fire)) {
-            console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
+            // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             ettinBoite.style.top = "0px";
             // ettinBoite.style.backgroundColor = "red";
             ettinBoite.style.filter = "grayscale(100%)";
@@ -1354,7 +1260,7 @@ window.onload = function () {
         // /--------------------------------------------------------------------------------/
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(impBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(impBoite.style.left) + parseFloat(impBoite.style.width)) && weapon.fire)) {
-            console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
+            // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             impBoite.style.top = "0px";
             // impBoite.style.backgroundColor = "red";
             impBoite.style.filter = "grayscale(100%)";
@@ -1372,7 +1278,7 @@ window.onload = function () {
         // /--------------------------------------------------------------------------------/
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(gargoyleBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(gargoyleBoite.style.left) + parseFloat(gargoyleBoite.style.width)) && weapon.fire)) {
-            console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
+            // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             gargoyleBoite.style.top = "0px";
             // gargoyleBoite.style.backgroundColor = "red";
             gargoyleBoite.style.filter = "grayscale(100%)";
@@ -1390,7 +1296,7 @@ window.onload = function () {
         // /--------------------------------------------------------------------------------/
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heresiarchBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(heresiarchBoite.style.left) + parseFloat(heresiarchBoite.style.width)) && weapon.fire)) {
-            console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
+            // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             heresiarchBoite.style.top = "0px";
             // heresiarchBoite.style.backgroundColor = "red";
             heresiarchBoite.style.filter = "grayscale(100%)";
@@ -1402,5 +1308,39 @@ window.onload = function () {
             // heresiarchBoite.style.backgroundColor = "rgba(242, 245, 169, 0)";
             heresiarchBoite.style.filter = "none";
         }
+        // ########################################################################################################
+        // ##########################  ---                   SCORE              ---  ##############################
+        // ########################################################################################################
+        var scoreId = document.getElementById("score");
+        var score = 0;
+        var addScore = document.createTextNode("Je suis un score : " + parseFloat(score));
+        if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heresiarchBoite.style.left) && weapon.fire) &&
+            (parseFloat(armeBoite.style.left) < (parseFloat(heresiarchBoite.style.left) + parseFloat(heresiarchBoite.style.width)) && weapon.fire) ||
+            ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(gargoyleBoite.style.left) && weapon.fire) &&
+            (parseFloat(armeBoite.style.left) < (parseFloat(gargoyleBoite.style.left) + parseFloat(gargoyleBoite.style.width)) && weapon.fire) ||
+            ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(impBoite.style.left) && weapon.fire) &&
+            (parseFloat(armeBoite.style.left) < (parseFloat(impBoite.style.left) + parseFloat(impBoite.style.width)) && weapon.fire) ||
+            ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(ettinBoite.style.left) && weapon.fire) &&
+            (parseFloat(armeBoite.style.left) < (parseFloat(ettinBoite.style.left) + parseFloat(ettinBoite.style.width)) && weapon.fire) ||
+            ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heroBoite.style.left) && weapon.fire) &&
+            (parseFloat(armeBoite.style.left) < (parseFloat(heroBoite.style.left) + parseFloat(heroBoite.style.width)) && weapon.fire)) {
+            console.log('SCORE !!! !!!');
+            score++;
+            console.log(score);
+            scoreId.appendChild(addScore);
+            document.body.insertBefore(scoreId, addScore);
+        }
+
+
+
+        //     var div = document.createElement("div");
+        //     var contenu = document.createTextNode("Je suis un texte magique et super génial");
+        //     div.appendChild(contenu);
+        //     console.log("fonction creerBalise");
+        //     var currentDiv = document.getElementsByTagName("div")[0];
+        //     document.body.insertBefore(div, currentDiv);
+        //     var att = document.createAttribute("id");
+        //     att.value = "superText";
+
     }
 }    

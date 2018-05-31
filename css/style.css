@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'DooM';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DooM'), url('DooM.woff') format('woff');
+  }
 body{
   background-image: url("http://i.imgur.com/wLDhz.jpg");
   /* background-image: url("../spritesRetro/stone2.png"); */
   background-repeat: repeat;
-  background-size: cover;
+  background-size: inherit;
 }
 .porte {
   position: absolute;
@@ -14,40 +20,56 @@ body{
 
 .gameOver {
   position: absolute;
-  height: 763px;
-  width: 1380px;
+  height: 750px;
+  width: 1094px;
   z-index: 3;
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 a {
+  font-family: 'DooM';
+  font-size: 2rem;
+  font-weight: bold;
   position: absolute;
   top: 30px;
   left: 1130px;
-
   filter: drop-shadow(2px 4px 2px black);
-
   text-align: center;
-  padding: 5px;
-
-  background-color: rgb(255, 0, 0);
+  padding: 10px;
+  background: linear-gradient(-35deg, #540000, #ff0c0c);
   border: outset 3px rgb(161, 0, 0);
   border-radius: 30px;
   /* height: 40px; */
-  width: 40px;
-
+  text-shadow: 2px 2px 2px black;
+  width: 90px;
   text-decoration: none;
-  color: white;
+  color: #cdcdcd;
   font-weight: bold;
-  font-size: 1.4rem;
 }
 .cv:hover{
+  text-shadow: 1px 1px 1px white;
   color: black;
 }
 .cv:active {
   filter: drop-shadow(0 0 0 black);
   background-color: rgb(255, 0, 0);
   border: outset 3px rgb(161, 0, 0);
+}
+
+.score{
+  font-family: 'DooM';
+  font-size: 3rem;
+  position: absolute;
+  padding: 5px;
+  left: 1135px;
+  /* overflow: hidden; */
+  width: 295px;
+  height: 140px;
+  text-shadow: 1px 2px 0px white;
+  color: #920000;
+  background: linear-gradient(180deg, #cdcdcd59, #200202c2);
+  /* background-color: #0000004d; */
+  box-shadow: inset 3px 3px 10px black;
 }
 
 audio {

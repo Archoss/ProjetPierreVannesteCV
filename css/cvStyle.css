@@ -9,7 +9,7 @@ body{
 
 #page{
     background-image: url("http://monodomo.com/free-wallpapers/retro-gaming-wallpapers-1080p-For-Free-Wallpaper-1.jpg");
-    background-size: contain;
+    background-size: cover;
 }
 
 h1{
