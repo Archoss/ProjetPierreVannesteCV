@@ -1372,7 +1372,7 @@ window.onload = function () {
             scoreId.innerHTML = "Score : " + score;
             console.log(score);
         }
-        if (score >= 100) {
+        if (score >= 500) {
             console.log("VICTORY !!!")
             scoreId.innerHTML = "- VICTORY -";
             endGame.style.display = "block";
