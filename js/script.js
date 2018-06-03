@@ -2,6 +2,9 @@ window.onload = function () {
     // ##############################################################################
     // ##################### ---        MES VARIABLES       --- #####################
     // ##############################################################################
+    // ####      COMPETENCES           ##############################################
+    var heroBoite = document.getElementById("heroBoite");
+
     // ####      HERO           #####################################################
     var heroBoite = document.getElementById("heroBoite");
     var heroMasque = document.getElementById("heroMasque");
@@ -39,7 +42,7 @@ window.onload = function () {
     ettinBoite.style.left = "290px";
     ettinBoite.style.top = "0px";
     ettinBoite.style.height = "140px";
-    ettinBoite.style.width = "160px";
+    ettinBoite.style.width = "175px";
 
     // ####      HERESIARCH     #####################################################
     var heresiarchBoite = document.getElementById("heresiarchBoite");
@@ -101,8 +104,13 @@ window.onload = function () {
     var torcheMasque = document.getElementById("torcheMasque");
     var torcheSprite = document.getElementById("torcheSprite");
 
+    // ####      GAME OVER        ##################################################
     var gameOver = document.getElementById('gameOver');
     gameOver.style.display = "none";
+
+    // ####      END GAME        ###################################################
+    var endGame = document.getElementById('endGame');
+    endGame.style.display = "none";
 
     // ##############################################################################
     // #####################        --- OBJETS      ---     #########################
@@ -1107,6 +1115,11 @@ window.onload = function () {
     })
 
     var direction = "";
+    var score = 0;
+
+    // #-----------------------------------------#
+    //     #------#    CONTROLES     #------#
+    // #-----------------------------------------#
     window.onkeydown = function (event) {
         var code = event.keyCode;
         if (event.defaultPrevented) {
@@ -1174,10 +1187,12 @@ window.onload = function () {
             default:
                 // console.log("Error du switch");
                 break;
-        };
+        }
 
         if (direction === "right") {
             weapon.moveX("right", 15);
+            // console.log(" armeBoite left " + parseFloat(armeBoite.style.left) + " heroBoite left " + parseFloat(heroBoite.style.left));
+            console.log("déplacement à droite");
             // #--------------------------------------------------------------------#
             //        #------#        COLLISIONS ARME A DROITE         #------#
             // #--------------------------------------------------------------------#
@@ -1188,6 +1203,8 @@ window.onload = function () {
             }
         } else if (direction === "left") {
             weapon.moveX("left", 15);
+            // console.log(" armeBoite left " + parseFloat(armeBoite.style.left) + " heroBoite left " + parseFloat(heroBoite.style.left));
+            console.log("déplacement à gauche");
             // #-------------------------------------------------------------------------#
             //        #------#        COLLISIONS ARME BORD A GAUCHE         #------#
             // #-------------------------------------------------------------------------#
@@ -1221,14 +1238,18 @@ window.onload = function () {
         //            ///////////////            HERO             ///////////////
         // /--------------------------------------------------------------------------------/
         console.log(weapon.fire);
-        // console.log(" armeBoite left " + parseFloat(armeBoite.style.left) + " heroBoite left " + parseFloat(heroBoite.style.left));
+        console.log(" armeBoite left " + parseFloat(armeBoite.style.left) + " heroBoite left " + parseFloat(heroBoite.style.left));
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heroBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(heroBoite.style.left) + parseFloat(heroBoite.style.width)) && weapon.fire)) {
-            // console.log("---- PAAAAAAAAFFF collisions de tirs ---- ");
+            console.log("---- PAAAAAAAAFFF collisions de tirs ---- ");
             heroBoite.style.top = "0px";
             // heroBoite.style.backgroundColor = "red";
-            heroBoite.style.filter = "grayscale(100%)";
-            heroBoite.style.transition = "all 0.25s";
+            heroBoite.style.filter = "brightness(1.75)";
+            heroBoite.style.transition = "top 0.25s";
+
+            heroSprite.style.top = "-562px";  // frame ennemi blessé
+            heroSprite.style.left = "-6px"; // frame ennemi blessé
+
             // getAnimationFrameCollisionWithHud(heroSprite, heroMasque, hero.death1, 300);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(heroBoite.style.left) + parseFloat(heroBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(heroBoite.style.width) && (!weapon.fire)))) {
@@ -1245,8 +1266,12 @@ window.onload = function () {
             // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             ettinBoite.style.top = "0px";
             // ettinBoite.style.backgroundColor = "red";
-            ettinBoite.style.filter = "grayscale(100%)";
-            ettinBoite.style.transition = "all 0.25s";
+            ettinBoite.style.filter = "brightness(1.75)";
+            ettinBoite.style.transition = "top 0.25s";
+
+            ettinSprite.style.top = "-1213px";  // frame ennemi blessé
+            ettinSprite.style.left = "-7px";  // frame ennemi blessé
+
             // getAnimationFrameCollisionWithHud(ettinSprite, ettinMasque, ettin.death1, 300);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(ettinBoite.style.left) + parseFloat(ettinBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(ettinBoite.style.width) && (!weapon.fire)))) {
@@ -1263,8 +1288,12 @@ window.onload = function () {
             // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             impBoite.style.top = "0px";
             // impBoite.style.backgroundColor = "red";
-            impBoite.style.filter = "grayscale(100%)";
-            impBoite.style.transition = "all 0.25s";
+            impBoite.style.filter = "brightness(1.75)";
+            impBoite.style.transition = "top 0.25s";
+
+            impSprite.style.top = "-275px";  // frame ennemi blessé
+            impSprite.style.left = "-440px";  // frame ennemi blessé
+
             // getAnimationFrameCollisionWithHud(impSprite, impMasque, imp.death1, 300);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(impBoite.style.left) + parseFloat(impBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(impBoite.style.width) && (!weapon.fire)))) {
@@ -1281,8 +1310,10 @@ window.onload = function () {
             // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             gargoyleBoite.style.top = "0px";
             // gargoyleBoite.style.backgroundColor = "red";
-            gargoyleBoite.style.filter = "grayscale(100%)";
-            gargoyleBoite.style.transition = "all 0.25s";
+            gargoyleBoite.style.filter = "brightness(1.75)";
+            gargoyleBoite.style.transition = "top 0.25s";
+
+            gargoyleSprite.style.top = "-619px";  // frame ennemi blessé
             // getAnimationFrameCollisionWithHud(impSprite, impMasque, imp.death1, 300);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(gargoyleBoite.style.left) + parseFloat(gargoyleBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(gargoyleBoite.style.width) && (!weapon.fire)))) {
@@ -1299,8 +1330,12 @@ window.onload = function () {
             // console.log("---- PAAAAAAAAFFF collisions Tirs ---- ");
             heresiarchBoite.style.top = "0px";
             // heresiarchBoite.style.backgroundColor = "red";
-            heresiarchBoite.style.filter = "grayscale(100%)";
-            heresiarchBoite.style.transition = "all 0.25s";
+            heresiarchBoite.style.filter = "brightness(1.75)";
+            heresiarchBoite.style.transition = "top 0.25s";
+
+            heresiarchSprite.style.top = "-624px"; // frame ennemi blessé
+            heresiarchSprite.style.left = "-6px"; // frame ennemi blessé
+
             // getFirstAnimationFrame(heresiarchSprite, heresiarchMasque, heresiarch.death, 200);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(heresiarchBoite.style.left) + parseFloat(heresiarchBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(heresiarchBoite.style.width) && (!weapon.fire)))) {
@@ -1308,12 +1343,11 @@ window.onload = function () {
             // heresiarchBoite.style.backgroundColor = "rgba(242, 245, 169, 0)";
             heresiarchBoite.style.filter = "none";
         }
+
         // ########################################################################################################
         // ##########################  ---                   SCORE              ---  ##############################
         // ########################################################################################################
         var scoreId = document.getElementById("score");
-        var score = 0;
-        var addScore = document.createTextNode("Je suis un score : " + parseFloat(score));
         if (((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(heresiarchBoite.style.left) && weapon.fire) &&
             (parseFloat(armeBoite.style.left) < (parseFloat(heresiarchBoite.style.left) + parseFloat(heresiarchBoite.style.width)) && weapon.fire) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width)) > parseFloat(gargoyleBoite.style.left) && weapon.fire) &&
@@ -1326,21 +1360,26 @@ window.onload = function () {
             (parseFloat(armeBoite.style.left) < (parseFloat(heroBoite.style.left) + parseFloat(heroBoite.style.width)) && weapon.fire)) {
             console.log('SCORE !!! !!!');
             score++;
+            scoreId.innerHTML = "Score : " + score;
             console.log(score);
-            scoreId.appendChild(addScore);
-            document.body.insertBefore(scoreId, addScore);
         }
+        if (score == 200) {
+            console.log("VICTORY !!!")
+            scoreId.innerHTML = "- VICTORY -";
+            endGame.style.display = "block";
+
+        }
+    };
 
 
 
-        //     var div = document.createElement("div");
-        //     var contenu = document.createTextNode("Je suis un texte magique et super génial");
-        //     div.appendChild(contenu);
-        //     console.log("fonction creerBalise");
-        //     var currentDiv = document.getElementsByTagName("div")[0];
-        //     document.body.insertBefore(div, currentDiv);
-        //     var att = document.createAttribute("id");
-        //     att.value = "superText";
+    //     var div = document.createElement("div");
+    //     var contenu = document.createTextNode("Je suis un texte magique et super génial");
+    //     div.appendChild(contenu);
+    //     console.log("fonction creerBalise");
+    //     var currentDiv = document.getElementsByTagName("div")[0];
+    //     document.body.insertBefore(div, currentDiv);
+    //     var att = document.createAttribute("id");
+    //     att.value = "superText";
 
-    }
 }    
