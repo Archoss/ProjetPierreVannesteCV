@@ -38,7 +38,7 @@ a {
   font-weight: bold;
   position: absolute;
   top: 30px;
-  left: 1130px;
+  left: 1220px;
   filter: drop-shadow(2px 4px 2px black);
   text-align: center;
   padding: 10px;
@@ -64,33 +64,73 @@ a {
 
 .score{
   font-family: 'DooM';
-  font-size: 3rem;
   position: absolute;
   padding: 5px;
-  left: 1135px;
+  left: 1150px;
+  top: 130px;
   text-align: center;
   /* overflow: hidden; */
   width: 295px;
-  height: 140px;
   text-shadow: 2px 3px 2px black;
   color: #920000;
   background: linear-gradient(180deg, #cdcdcd59, #200202c2);
   /* background-color: #0000004d; */
   box-shadow: inset 3px 3px 10px black;
 }
-.tuto{
+.gameRule{
   font-family: 'DooM';
   font-size: 1.5rem;
   position: absolute;
   /* padding: 5px; */
   letter-spacing: 1.4px;
-  left: 1101px;
-  top: 532px;
+  left: 1103px;
+  top: 530px;
   text-align: left;
   /* width: 295px; */
   height: 140px;
   text-shadow: 3px 2px 1px #000000;
   color: #f90101;
+}
+.start{
+  font-family: 'DooM';
+  font-size: 1.3rem;
+  position: absolute;
+  /* padding: 5px; */
+  letter-spacing: 1.4px;
+  left: 1113px;
+  top: 371px;
+  text-align: left;
+  /* width: 295px; */
+  height: 140px;
+  text-shadow: 3px 2px 1px #000000;
+  color: #f90101;
+}
+
+.controles{
+  font-family: 'DooM';
+  font-size: 1.7rem;
+  position: absolute;
+  /* padding: 5px; */
+  letter-spacing: 1.8px;
+  left: 257px;
+  top: 505px;
+  text-align: left;
+  /* width: 295px; */
+  height: 140px;
+  text-shadow: 3px 2px 1px #000000;
+  color: #f90101;
+}
+
+p{
+  margin-left: 185px;
+}
+
+span{
+  font-size: 3rem;
+}
+
+span:first-of-type{
+  margin-right: 120px;
 }
 
 audio {

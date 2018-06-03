@@ -2,8 +2,14 @@ window.onload = function () {
     // ##############################################################################
     // ##################### ---        MES VARIABLES       --- #####################
     // ##############################################################################
-    // ####      COMPETENCES           ##############################################
-    var heroBoite = document.getElementById("heroBoite");
+    // ####      SCORE           ####################################################
+    var score = document.getElementById("score");
+    score.style.fontSize = "2.6rem";
+    score.style.height = "155px";
+
+    // ####      CONTROLES           ################################################
+    var controles = document.getElementById("controles");
+    controles.style.display = "block";
 
     // ####      HERO           #####################################################
     var heroBoite = document.getElementById("heroBoite");
@@ -1131,12 +1137,14 @@ window.onload = function () {
                 // console.log(armeMasque);
                 direction = "right";
                 direction != "left";
+                controles.style.display = "none";
                 break;
 
             case 37: // A GAUCHE 
                 // console.log(armeMasque);
                 direction = "left";
                 direction != "right";
+                controles.style.display = "none";
                 break;
 
             case 38: // EN HAUT 
@@ -1159,6 +1167,7 @@ window.onload = function () {
                 direction != "left";
                 direction != "right";
                 getAnimationFrameCollisionWithHud(armeSprite, armeBoite, weapon.fireOn, 150);
+                controles.style.display = "none";
                 weapon.fire = true;
                 console.log(weapon.fire);
                 console.log("armeBoite.style.left + armeBoite.style.width " + parseFloat(armeBoite.style.left + armeBoite.style.width));
@@ -1363,10 +1372,11 @@ window.onload = function () {
             scoreId.innerHTML = "Score : " + score;
             console.log(score);
         }
-        if (score == 200) {
+        if (score >= 100) {
             console.log("VICTORY !!!")
             scoreId.innerHTML = "- VICTORY -";
             endGame.style.display = "block";
+
 
         }
     };
