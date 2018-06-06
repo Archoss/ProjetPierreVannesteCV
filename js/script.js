@@ -1381,6 +1381,8 @@ window.onload = function () {
         }
     };
 
+    // document.location.reload(false)
+
 
 
     //     var div = document.createElement("div");

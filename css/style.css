@@ -33,12 +33,7 @@ body{
 }
 
 a {
-  font-family: 'DooM';
-  font-size: 2rem;
-  font-weight: bold;
   position: absolute;
-  top: 30px;
-  left: 1220px;
   filter: drop-shadow(2px 4px 2px black);
   text-align: center;
   padding: 10px;
@@ -47,16 +42,42 @@ a {
   border-radius: 30px;
   /* height: 40px; */
   text-shadow: 2px 2px 2px black;
-  width: 90px;
   text-decoration: none;
   color: #cdcdcd;
   font-weight: bold;
+}
+
+.cv{
+  color: #cacaca;
+  top: 30px;
+  left: 1150px;
+  font-family: 'DooM';
+  font-size: 2rem;
 }
 .cv:hover{
   text-shadow: 1px 1px 1px white;
   color: black;
 }
 .cv:active {
+  filter: drop-shadow(0 0 0 black);
+  background-color: rgb(255, 0, 0);
+  border: outset 3px rgb(161, 0, 0);
+}
+
+.montages{
+  color: #cacaca;
+  font-family: 'DooM';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  width: 170px;
+  top: 30px;
+  left: 1280px;
+}
+.montages:hover{
+  text-shadow: 1px 1px 1px white;
+  color: black;
+}
+.montages:active{
   filter: drop-shadow(0 0 0 black);
   background-color: rgb(255, 0, 0);
   border: outset 3px rgb(161, 0, 0);
@@ -76,6 +97,7 @@ a {
   background: linear-gradient(180deg, #cdcdcd59, #200202c2);
   /* background-color: #0000004d; */
   box-shadow: inset 3px 3px 10px black;
+  border: inset 4px rgb(173, 0, 0);
 }
 .gameRule{
   font-family: 'DooM';
@@ -111,14 +133,14 @@ a {
   font-size: 1.7rem;
   position: absolute;
   /* padding: 5px; */
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
   left: 257px;
   top: 505px;
   text-align: left;
   /* width: 295px; */
   height: 140px;
   text-shadow: 3px 2px 1px #000000;
-  color: #f90101;
+  color: #d80000;
 }
 
 p{
