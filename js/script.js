@@ -1040,9 +1040,6 @@ window.onload = function () {
             }
         }, frame);
     }
-    function getAnimationArme() {
-
-    }
     // #----------------------------------------------------#
     //     #------#    DEPLACEMENT Y DES MOBS    #------#
     // #----------------------------------------------------#
@@ -1061,7 +1058,7 @@ window.onload = function () {
                 // console.log(value);
                 // console.log("PAF --COLLISION");
             }
-        }, 30);
+        }, 55);
     }
 
     // #########################################################################################
@@ -1099,25 +1096,27 @@ window.onload = function () {
         getAnimationFrameCollisionWithHud(gargoyleSprite, gargoyleMasque, gargoyle.death, 80);
     })
     marineMasque.addEventListener("click", function () {
-        getMove(heroBoite, 3);
-        getFirstAnimationFrame(heroSprite, heroMasque, hero.walkingDown, 250);
-        // console.log("heroBoite.style.top " + heroBoite.style.top);
-        // --- ---
-        getMove(heresiarchBoite, 3);
-        getFirstAnimationFrame(heresiarchSprite, heresiarchMasque, heresiarch.walkingDown, 250);
-        // console.log("heresiarchBoite.style.top " + heresiarchBoite.style.top);
-        // --- ---
-        getMove(impBoite, 3);
-        getFirstAnimationFrame(impSprite, impMasque, imp.walkingDown, 250);
-        // console.log("impBoite.style.top " + impBoite.style.top);
-        // --- ---
-        getMove(ettinBoite, 3);
-        getFirstAnimationFrame(ettinSprite, ettinMasque, ettin.walkingDown, 250);
-        // console.log("ettinBoite.style.top " + ettinBoite.style.top);
-        // --- ---
-        getMove(gargoyleBoite, 3);
-        getFirstAnimationFrame(gargoyleSprite, gargoyleMasque, gargoyle.walkingDown, 120);
-        // console.log("gargoyleBoite.style.top " + gargoyleBoite.style.top);
+        setTimeout(function () {
+            getMove(heroBoite, 3);
+            getFirstAnimationFrame(heroSprite, heroMasque, hero.walkingDown, 250);
+            // console.log("heroBoite.style.top " + heroBoite.style.top);
+            // --- ---
+            getMove(heresiarchBoite, 3);
+            getFirstAnimationFrame(heresiarchSprite, heresiarchMasque, heresiarch.walkingDown, 250);
+            // console.log("heresiarchBoite.style.top " + heresiarchBoite.style.top);
+            // --- ---
+            getMove(impBoite, 3);
+            getFirstAnimationFrame(impSprite, impMasque, imp.walkingDown, 250);
+            // console.log("impBoite.style.top " + impBoite.style.top);
+            // --- ---
+            getMove(ettinBoite, 3);
+            getFirstAnimationFrame(ettinSprite, ettinMasque, ettin.walkingDown, 250);
+            // console.log("ettinBoite.style.top " + ettinBoite.style.top);
+            // --- ---
+            getMove(gargoyleBoite, 3);
+            getFirstAnimationFrame(gargoyleSprite, gargoyleMasque, gargoyle.walkingDown, 120);
+            // console.log("gargoyleBoite.style.top " + gargoyleBoite.style.top);
+        }, 2000);
     })
 
     var direction = "";
@@ -1166,6 +1165,15 @@ window.onload = function () {
             case 32: // ESPACE 
                 direction != "left";
                 direction != "right";
+                // var feuAVolonte = setInterval(function () {
+                //     if ((armeSprite.style.left == "-100px") && (armeSprite.style.top == "0px")) {
+                //         armeSprite.style.left = "0px";
+                //     } else if ((armeSprite.style.left == "0px") && armeSprite.style.top == "0px") {
+                //         armeSprite.style.top = "0px";
+                //         armeSprite.style.left = "-100px";
+                //     }
+                //     code.onkeyup = function () { clearInterval(feuAVolonte) };
+                // }, 70)
                 getAnimationFrameCollisionWithHud(armeSprite, armeBoite, weapon.fireOn, 150);
                 controles.style.display = "none";
                 weapon.fire = true;
@@ -1323,6 +1331,7 @@ window.onload = function () {
             gargoyleBoite.style.transition = "top 0.25s";
 
             gargoyleSprite.style.top = "-619px";  // frame ennemi blessé
+            gargoyleSprite.style.left = "0px";  // frame ennemi blessé
             // getAnimationFrameCollisionWithHud(impSprite, impMasque, imp.death1, 300);
         } else if ((parseFloat(armeBoite.style.left) > (parseFloat(gargoyleBoite.style.left) + parseFloat(gargoyleBoite.style.width) && (!weapon.fire))) ||
             ((parseFloat(armeBoite.style.left) + parseFloat(armeBoite.style.width) < parseFloat(gargoyleBoite.style.width) && (!weapon.fire)))) {
