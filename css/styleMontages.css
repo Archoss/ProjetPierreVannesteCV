@@ -42,8 +42,8 @@ h1{
     width: 90%;
     background-color: #ffffff;
     margin: 30px auto;
-    border: inset orange 6px;
-    box-shadow: 6px 6px 22px #000000;
+    /* border: inset orange 6px; */
+    box-shadow: 4px 4px 25px #000000;
 }
 
 img{
